@@ -1,22 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'home/home.dart';
 
-import 'movie_app.dart';
-
-void main() {
-  runApp(ProviderScope(child:MyApp()));
-}
-
-
-
-
-
-
-
-
-
-
-/*class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,12 +10,18 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
-      home: MyHomePage(title: 'Sinan Kallayi'),
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+
+
+
+
+
+
+/*class MyHomePage extends StatefulWidget {
   final String title;
 
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -64,43 +55,43 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(children: [
         Image(
           image:
-              // ResizeImage(
-              AssetImage('assets/images/Wallpaper_1.jpg'),
+          // ResizeImage(
+          AssetImage('assets/images/Wallpaper_1.jpg'),
           // width: 720,
           // height: 1080),
           height: 1000,
           fit: BoxFit.fitHeight,
         ),
-    Center(
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children:[
-     Text(
-          'Counting App',
-       style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold ),
+        Center(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children:[
+                Text(
+                  'Counting App',
+                  style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold ),
+                ),
+              ]),
         ),
-    ]),
-    ),
         Center(
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'You have pushed the button this many times:',
-              style: TextStyle(fontSize: 16),
-            ),
-            Container(
-                color: Colors.blueGrey,
-                width: 270,
-                height:5
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            ElevatedButton(onPressed: _resetCounter, child: Text("Reset"))
-          ],
-        )),
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'You have pushed the button this many times:',
+                  style: TextStyle(fontSize: 16),
+                ),
+                Container(
+                    color: Colors.blueGrey,
+                    width: 270,
+                    height:5
+                ),
+                Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                ElevatedButton(onPressed: _resetCounter, child: Text("Reset"))
+              ],
+            )),
       ]),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
